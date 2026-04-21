@@ -30,10 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // MENU MOBILE
 // ==========================
 function toggleMenu() {
-  const menu = document.getElementById("menu");
-  if (menu) {
-    menu.classList.toggle("open");
-  }
+  document.getElementById("menu").classList.toggle("open");
 }
 
 

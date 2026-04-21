@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lycée de Luganville | Calendrier</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    select {
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="top-header">
+    <div class="container header-row">
+      <div class="brand">
+        <img src="images/logo.png" alt="Logo du Lycée de Luganville" class="logo">
+        <div>
+          <h1>Lycée de Luganville</h1>
+          <p class="subtitle">Santo, Vanuatu</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu" class="nav-list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="lycee.html">Le lycée</a></li>
+      <li><a href="annonces.html">Annonces</a></li>
+      <li><a href="calendrier.html" class="active">Calendrier</a></li>
+      <li><a href="emploi-du-temps.html">Emploi du temps</a></li>
+      <li><a href="documents.html">Documents</a></li>
+      <li><a href="vie-scolaire.html">Vie scolaire</a></li>
+      <li><a href="photos.html">Galerie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container page">
+
+    <section class="page-header">
+      <h2>Calendrier des événements</h2>
+      <p>Dates importantes de l’établissement.</p>
+    </section>
+
+    <!-- Filtre -->
+    <select onchange="filterEvents(this.value)">
+      <option value="all">Tous</option>
+      <option value="reunion">Réunions</option>
+      <option value="sortie">Sorties</option>
+    </select>
+
+    <section class="panel">
+      <table class="calendar-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Événement</th>
+            <th>Détails</th>
+          </tr>
+        </thead>
+        <tbody id="eventTable">
+
+          <tr class="reunion">
+            <td>08 mai 2026</td>
+            <td>Réunion des parents</td>
+            <td>Réunion prévue à 17h00 dans la salle polyvalente.</td>
+          </tr>
+
+          <tr class="sortie">
+            <td>12 mai 2026</td>
+            <td>Sortie pédagogique</td>
+            <td>Participation des classes concernées sous encadrement des enseignants.</td>
+          </tr>
+
+          <tr class="reunion">
+            <td>20 mai 2026</td>
+            <td>Conseil de classe</td>
+            <td>Réunion pédagogique interne de suivi scolaire.</td>
+          </tr>
+
+          <tr>
+            <td>30 mai 2026</td>
+            <td>Vacances scolaires</td>
+            <td>Début des congés selon le calendrier de l’établissement.</td>
+          </tr>
+
+          <tr>
+            <td>05 juin 2026</td>
+            <td>Remise de documents</td>
+            <td>Dépôt administratif des formulaires et pièces demandées.</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Lycée de Luganville - Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Script filtre -->
+  <script>
+    function filterEvents(type) {
+      const rows = document.querySelectorAll("#eventTable tr");
+
+      rows.forEach(row => {
+        if (type === "all") {
+          row.style.display = "";
+        } else if (row.classList.contains(type)) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

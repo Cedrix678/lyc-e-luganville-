@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lycée de Luganville | Galerie photos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="top-header">
+  <div class="container header-row">
+    <div class="brand">
+      <img src="images/logo.png" alt="Logo du Lycée de Luganville" class="logo">
+      <div>
+        <h1>Lycée de Luganville</h1>
+        <p class="subtitle">Santo, Vanuatu</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Navigation -->
+<nav class="main-nav">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <ul id="menu" class="nav-list">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="lycee.html">Le lycée</a></li>
+    <li><a href="annonces.html">Annonces</a></li>
+    <li><a href="calendrier.html">Calendrier</a></li>
+    <li><a href="emploi-du-temps.html">Emploi du temps</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="vie-scolaire.html">Vie scolaire</a></li>
+    <li><a href="photos.html" class="active">Galerie</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<main class="container page">
+
+  <section class="page-header">
+    <h2>Galerie photos</h2>
+    <p>Photos des activités et événements du lycée.</p>
+  </section>
+
+  <!-- FILTRES -->
+  <div class="filters">
+    <select onchange="filterCategory(this.value)">
+      <option value="all">Toutes catégories</option>
+      <option value="sport">Sport</option>
+      <option value="culture">Culture</option>
+      <option value="sortie">Sorties</option>
+    </select>
+
+    <select onchange="sortByDate(this.value)">
+      <option value="new">Plus récentes</option>
+      <option value="old">Plus anciennes</option>
+    </select>
+  </div>
+
+  <!-- GALERIE PRO -->
+  <section class="gallery-grid" id="gallery">
+
+    <div class="photo" data-category="sport" data-date="2026-05-12">
+      <img src="images/photos/sport/sport1.jpg" onclick="openImage(this)">
+      <p>Match scolaire - 12 mai 2026</p>
+    </div>
+
+    <div class="photo" data-category="culture" data-date="2026-05-01">
+      <img src="images/photos/culture/culture1.jpg" onclick="openImage(this)">
+      <p>Journée culturelle</p>
+    </div>
+
+    <div class="photo" data-category="sortie" data-date="2026-04-20">
+      <img src="images/photos/sortie/sortie1.jpg" onclick="openImage(this)">
+      <p>Sortie pédagogique</p>
+    </div>
+
+    <div class="photo" data-category="sport" data-date="2026-03-10">
+      <img src="images/photos/sport/sport2.jpg" onclick="openImage(this)">
+      <p>Tournoi sportif</p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeImage()">
+  <img id="lightbox-img">
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-bottom">
+    <p>&copy; 2026 Lycée de Luganville - Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

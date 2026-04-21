@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lycée de Luganville | Annonces</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="top-header">
+    <div class="container header-row">
+      <div class="brand">
+        <img src="images/logo.png" alt="Logo du Lycée de Luganville" class="logo">
+        <div class="brand-text">
+          <h1>Lycée de Luganville</h1>
+          <p class="subtitle">Santo, Vanuatu</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu" class="nav-list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="lycee.html">Le lycée</a></li>
+      <li><a href="annonces.html" class="active">Annonces</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="emploi-du-temps.html">Emploi du temps</a></li>
+      <li><a href="documents.html">Documents</a></li>
+      <li><a href="vie-scolaire.html">Vie scolaire</a></li>
+      <li><a href="photos.html">Galerie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container page">
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <h2>Annonces</h2>
+      <p>Informations officielles du lycée.</p>
+    </section>
+
+    <!-- Announcements -->
+    <section class="panel announcements" id="annonces">
+
+      <div class="annonce" data-date="2026-05-20">
+        <h3>Conseil de classe</h3>
+        <p>Réunion pédagogique.</p>
+      </div>
+
+      <div class="annonce" data-date="2026-05-08">
+        <h3>Réunion parents</h3>
+        <p>Vendredi à 17h.</p>
+      </div>
+
+      <div class="annonce" data-date="2026-05-12">
+        <h3>Sortie scolaire</h3>
+        <p>Mardi prochain.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Lycée de Luganville - Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Script tri automatique -->
+  <script>
+    const container = document.getElementById("annonces");
+    const annonces = Array.from(container.getElementsByClassName("annonce"));
+
+    annonces.sort((a, b) => {
+      return new Date(b.dataset.date) - new Date(a.dataset.date);
+    });
+
+    annonces.forEach(el => container.appendChild(el));
+  </script>
+
+</body>
+</html>

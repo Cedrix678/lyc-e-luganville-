@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lycée de Luganville | Emploi du temps</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="top-header">
+    <div class="container header-row">
+      <div class="brand">
+        <img src="images/logo.png" alt="Logo du Lycée de Luganville" class="logo">
+        <div>
+          <h1>Lycée de Luganville</h1>
+          <p class="subtitle">Santo, Vanuatu</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation (updated) -->
+  <nav class="main-nav">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu" class="nav-list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="lycee.html">Le lycée</a></li>
+      <li><a href="annonces.html">Annonces</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="emploi-du-temps.html" class="active">Emploi du temps</a></li>
+      <li><a href="documents.html">Documents</a></li>
+      <li><a href="vie-scolaire.html">Vie scolaire</a></li>
+      <li><a href="photos.html">Galerie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container page">
+
+    <section class="page-header">
+      <h2>Emploi du temps</h2>
+      <p>Consultez l’emploi du temps en ligne ou téléchargez le fichier PDF.</p>
+    </section>
+
+    <section class="panel">
+      <div class="download-row">
+        <a class="btn" href="pdf/emploi_du_temps.pdf" download>
+          Télécharger l’emploi du temps
+        </a>
+        <p class="note">
+          Pour mettre cette page à jour, remplace simplement le fichier PDF.
+        </p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <iframe 
+        src="pdf/emploi_du_temps.pdf" 
+        title="Emploi du temps du Lycée de Luganville">
+      </iframe>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Lycée de Luganville - Tous droits réservés.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
